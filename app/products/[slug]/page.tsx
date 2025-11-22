@@ -10,9 +10,8 @@ function getProduct(slug: string) {
   return product
 }
 
-// Update the function to be async and await the params
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
-  // Await the params promise
+  // Await the params promise - this is required in Next.js 15
   const { slug } = await params
   const product = getProduct(slug)
 
