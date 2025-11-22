@@ -10,8 +10,11 @@ function getProduct(slug: string) {
   return product
 }
 
-export default function ProductPage({ params }: { params: { slug: string } }) {
-  const product = getProduct(params.slug)
+// Update the function to be async and await the params
+export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+  // Await the params promise
+  const { slug } = await params
+  const product = getProduct(slug)
 
   return (
     <div className="container mx-auto px-4 py-12">
