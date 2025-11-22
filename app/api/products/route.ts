@@ -1,11 +1,10 @@
 import { NextResponse } from 'next/server'
-import { sanityClient } from '@/lib/sanity'
-import { productsQuery } from '@/lib/sanity'
+import { mockProducts } from '@/lib/mock-data'
 
 export async function GET() {
   try {
-    const products = await sanityClient.fetch(productsQuery)
-    return NextResponse.json(products)
+    // Return mock products instead of fetching from Sanity
+    return NextResponse.json(mockProducts)
   } catch (error) {
     console.error('Products API error:', error)
     return NextResponse.json(
