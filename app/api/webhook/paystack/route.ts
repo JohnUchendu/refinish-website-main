@@ -1,6 +1,4 @@
 import { NextResponse } from 'next/server'
-import { verifyTransaction } from '@/lib/paystack'
-import { sanityClientPrivate } from '@/lib/sanity'
 
 export async function POST(request: Request) {
   try {
@@ -11,33 +9,22 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'No signature' }, { status: 400 })
     }
 
-    // Verify webhook signature (implementation depends on Paystack webhook setup)
-    // For now, we'll verify by checking the transaction directly
-
     const { event, data } = JSON.parse(body)
 
     if (event === 'charge.success') {
-      const verification = await verifyTransaction(data.reference)
+      // Simulate successful payment processing
+      console.log('Demo: Payment successful for reference:', data.reference)
       
-      if (verification.data.status === 'success') {
-        // Update order status in Sanity or your database
-        // This is where you'd create an order document in Sanity
-        console.log('Payment successful for reference:', data.reference)
-        
-        // Example: Create order in Sanity
-        await sanityClientPrivate.create({
-          _type: 'order',
-          reference: data.reference,
-          amount: verification.data.amount / 100, // Convert from kobo
-          status: 'completed',
-          customerEmail: data.customer?.email,
-          metadata: verification.data.metadata,
-          paidAt: new Date().toISOString()
-        })
-      }
+      // In a real app, you would:
+      // 1. Verify the transaction with Paystack
+      // 2. Update your database
+      // 3. Send confirmation emails, etc.
+      
+      // For demo purposes, just log and return success
+      console.log('Demo: Order would be created in database with reference:', data.reference)
     }
 
-    return NextResponse.json({ received: true })
+    return NextResponse.json({ received: true, message: 'Webhook processed successfully (demo mode)' })
   } catch (error) {
     console.error('Webhook error:', error)
     return NextResponse.json(
@@ -48,7 +35,7 @@ export async function POST(request: Request) {
 }
 
 export async function GET(request: Request) {
-  // For manual verification from success page
+  // For manual verification from success page (demo version)
   const { searchParams } = new URL(request.url)
   const reference = searchParams.get('reference')
 
@@ -57,7 +44,21 @@ export async function GET(request: Request) {
   }
 
   try {
-    const verification = await verifyTransaction(reference)
+    // Simulate verification response
+    const verification = {
+      status: true,
+      message: 'Verification successful',
+      data: {
+        reference: reference,
+        amount: 10000, // Example amount in kobo
+        currency: 'NGN',
+        status: 'success' as const,
+        metadata: {
+          custom_fields: []
+        }
+      }
+    }
+
     return NextResponse.json(verification)
   } catch (error) {
     console.error('Verification error:', error)
