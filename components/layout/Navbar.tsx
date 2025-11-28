@@ -39,7 +39,7 @@ export function Navbar() {
             {/* Logo Text */}
             <div className="flex flex-col">
               <span className="font-bold text-xl text-gray-900 dark:text-white leading-tight">
-                AutoElite
+                Refinish
               </span>
               <span className="text-xs text-gray-500 dark:text-gray-400 leading-tight">
                 Premium Auto Care

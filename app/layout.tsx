@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'AutoElite - Premium Auto Body Works & Detailing',
+  title: 'Refinish - Premium Auto Body Works & Detailing Company',
   description: 'Professional automobile body works, detailing, cleaning, and restoration services in Nigeria.',
 }
 

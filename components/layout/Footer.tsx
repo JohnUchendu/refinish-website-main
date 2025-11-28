@@ -9,7 +9,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 bg-blue-600 rounded-full"></div>
-              <span className="font-bold text-xl">AutoElite</span>
+              <span className="font-bold text-xl">Refinish</span>
             </Link>
             <p className="text-gray-400 mb-4 max-w-md">
               Premium automobile body works, detailing, and cleaning services. 
@@ -53,16 +53,16 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Contact</h3>
             <address className="not-italic text-gray-400 space-y-2">
-              <p>123 Automotive Street</p>
+              <p>123 Rumuola Street</p>
               <p>PH, Nigeria</p>
               <p>+234 812 000 5000</p>
-              <p>info@autoelite.com</p>
+              <p>info@refinish.com</p>
             </address>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} AutoElite. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Refinish. All rights reserved.</p>
         </div>
       </div>
     </footer>
