@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button'
 import { ServicesPreview } from '@/components/services/ServicesPreview'
 import { PortfolioShowcase } from '@/components/portfolio/PortfolioShowcase'
 import { ContactForm } from '@/components/contact/ContactForm'
-import { ProductsShowcase } from '@/components/shop/ProductsShowcase'
+
 
 export default function Home() {
  
@@ -25,7 +25,6 @@ export default function Home() {
       {/* Trust Indicators */}
       <TrustIndicators />
 
-<ProductsShowcase />
 
       {/* Team Members */}
       <TeamMembers />

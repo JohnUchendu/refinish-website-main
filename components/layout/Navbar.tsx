@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { useCart } from '@/hooks/use-cart'
 import { ShoppingCart, Menu, Car, Wrench } from 'lucide-react'
 import { useState } from 'react'
-import { ThemeToggle } from '@/components/theme/ThemeToggle'
+
 import Image from 'next/image'
 
 export function Navbar() {
@@ -25,17 +25,17 @@ export function Navbar() {
                 <Car className="h-6 w-6 text-white" />
                 <Wrench className="h-3 w-3 text-blue-200 absolute -bottom-1 -right-1" />
               </div>
-            
-    <Image
-      src="/logo.png"
-      alt="AutoElite - Premium Auto Body Works & Detailing"
-      fill
-      className="object-contain dark:invert"
-      priority
-    />
- 
+
+              <Image
+                src="/logo.png"
+                alt="AutoElite - Premium Auto Body Works & Detailing"
+                fill
+                className="object-contain dark:invert"
+                priority
+              />
+
             </div>
-            
+
             {/* Logo Text */}
             <div className="flex flex-col">
               <span className="font-bold text-xl text-gray-900 dark:text-white leading-tight">
@@ -71,7 +71,7 @@ export function Navbar() {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <ThemeToggle />
+
             <Button asChild variant="ghost" size="icon" className="relative">
               <Link href="/cart">
                 <ShoppingCart className="h-5 w-5" />
@@ -100,10 +100,9 @@ export function Navbar() {
                 )}
               </Link>
             </Button>
-            
-            {/* Theme Toggle - Always visible on mobile */}
-            <ThemeToggle />
-            
+
+
+
             {/* Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -118,49 +117,49 @@ export function Navbar() {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-200 dark:border-gray-700">
             <div className="flex flex-col space-y-4">
-              <Link 
-                href="/" 
+              <Link
+                href="/"
                 className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
-              <Link 
-                href="/services" 
+              <Link
+                href="/services"
                 className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
               </Link>
-              <Link 
-                href="/shop" 
+              <Link
+                href="/shop"
                 className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Shop
               </Link>
-              <Link 
-                href="/gallery" 
+              <Link
+                href="/gallery"
                 className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Gallery
               </Link>
-              <Link 
-                href="/about" 
+              <Link
+                href="/about"
                 className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </Link>
-              <Link 
-                href="/contact" 
+              <Link
+                href="/contact"
                 className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
               </Link>
-              
+
               {/* Mobile CTA Button */}
               <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
                 <Button asChild className="w-full bg-blue-600 hover:bg-blue-700 text-white">
