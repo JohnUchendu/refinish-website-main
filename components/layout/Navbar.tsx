@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { useCart } from '@/hooks/use-cart'
-import { ShoppingCart, Menu, Car, Wrench } from 'lucide-react'
+import { ShoppingCart, Menu, } from 'lucide-react'
 import { useState } from 'react'
 
 import Image from 'next/image'
@@ -30,7 +30,7 @@ export function Navbar() {
                 src="/images/logo.png"
                 alt="AutoElite - Premium Auto Body Works & Detailing"
                 fill
-                className="object-contain dark:invert"
+                className="object-contain"
                 priority
               />
 

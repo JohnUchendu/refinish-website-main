@@ -20,7 +20,7 @@ export function Footer() {
                   src="/images/logo.png"
                   alt="AutoElite - Premium Auto Body Works & Detailing"
                   fill
-                  className="object-contain dark:invert"
+                  className="object-contain"
                   priority
                 />
 
