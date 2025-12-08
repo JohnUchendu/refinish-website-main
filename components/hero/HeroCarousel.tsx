@@ -103,7 +103,7 @@ export function HeroCarousel() {
                         <Link href={slide.ctaLink}>{slide.cta}</Link>
                       </Button>
                       <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-gray-900 shadow-lg">
-                        <Link href="/contact">Free Consultation</Link>
+                        <Link href="/contact">Free Car Inspection</Link>
                       </Button>
                     </div>
                     

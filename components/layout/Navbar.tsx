@@ -21,13 +21,13 @@ export function Navbar() {
           <Link href="/" className="flex items-center space-x-3">
             {/* Logo Icon */}
             <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-                <Car className="h-6 w-6 text-white" />
-                <Wrench className="h-3 w-3 text-blue-200 absolute -bottom-1 -right-1" />
+              <div className="w-50 h-50 rounded-lg flex items-center justify-center">
+                {/* <Car className="h-6 w-6 text-white" />
+                <Wrench className="h-3 w-3 text-blue-200 absolute -bottom-1 -right-1" /> */}
               </div>
 
               <Image
-                src="/logo.png"
+                src="/images/logo.png"
                 alt="AutoElite - Premium Auto Body Works & Detailing"
                 fill
                 className="object-contain dark:invert"
@@ -37,14 +37,14 @@ export function Navbar() {
             </div>
 
             {/* Logo Text */}
-            <div className="flex flex-col">
+            {/* <div className="flex flex-col">
               <span className="font-bold text-xl text-gray-900 dark:text-white leading-tight">
                 Refinish
               </span>
               <span className="text-xs text-gray-500 dark:text-gray-400 leading-tight">
                 Premium Auto Care
               </span>
-            </div>
+            </div> */}
           </Link>
 
           {/* Desktop Navigation */}
@@ -89,6 +89,14 @@ export function Navbar() {
 
           {/* Mobile Actions (Cart + Menu) */}
           <div className="flex md:hidden items-center space-x-3">
+
+            {/* Shop Button */}
+            <Button asChild variant="ghost" size="icon">
+              <Link href="/shop">
+                <p>Shop</p>
+              </Link>
+            </Button>
+
             {/* Cart Icon - Always visible on mobile */}
             <Button asChild variant="ghost" size="icon" className="relative">
               <Link href="/cart">
