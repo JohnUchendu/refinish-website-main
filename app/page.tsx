@@ -1,3 +1,5 @@
+// app/page.tsx
+
 import { HeroCarousel } from '@/components/hero/HeroCarousel'
 import { TestimonialsCarousel } from '@/components/testimonials/TestimonialsCarousel'
 import { TrustIndicators } from '@/components/trust/TrustIndicators'

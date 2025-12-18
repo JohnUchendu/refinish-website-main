@@ -1,3 +1,5 @@
+// types/index.ts
+
 export interface Product {
   _id: string
   name: string

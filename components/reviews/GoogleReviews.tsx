@@ -1,3 +1,5 @@
+// components/reviews/GoogleReviews.tsx
+
 const mockReviews = [
   {
     id: 1,

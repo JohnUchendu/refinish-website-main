@@ -1,3 +1,5 @@
+// lib/paystack.ts
+
 export interface InitializeTransactionResponse {
   status: boolean
   message: string

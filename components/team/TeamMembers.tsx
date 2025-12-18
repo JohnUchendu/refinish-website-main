@@ -1,3 +1,5 @@
+// components/team/TeamMembers.tsx
+
 import { Award, Clock, Star, Users } from 'lucide-react'
 import Image from 'next/image'
 

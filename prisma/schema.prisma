@@ -1,0 +1,146 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  password      String
+  role          Role      @default(ADMIN)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@map("users")
+}
+
+enum Role {
+  ADMIN
+  EDITOR
+  VIEWER
+}
+
+model Product {
+  id            String    @id @default(cuid())
+  name          String
+  slug          String    @unique
+  description   String?
+  price         Float
+  originalPrice Float?
+  images        String[]
+  category      String
+  inStock       Boolean   @default(true)
+  isBestSeller  Boolean   @default(false)
+  isNew         Boolean   @default(false)
+  features      String[]
+  warranty      String?
+  freeShipping  Boolean   @default(false)
+  stockQuantity Int       @default(0)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  OrderItem     OrderItem[]
+
+  @@index([category])
+  @@index([isBestSeller])
+  @@map("products")
+}
+
+model Service {
+  id          String    @id @default(cuid())
+  title       String
+  description String?
+  priceRange  String
+  duration    String
+  image       String?
+  features    String[]
+  isActive    Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  OrderItem   OrderItem[]
+
+  @@map("services")
+}
+
+model Order {
+  id              String      @id @default(cuid())
+  customerName    String
+  customerEmail   String
+  customerPhone   String
+  customerAddress String?
+  items           OrderItem[]
+  totalAmount     Float
+  status          OrderStatus @default(PENDING)
+  notes           String?
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+  @@map("orders")
+}
+
+model OrderItem {
+  id        String   @id @default(cuid())
+  orderId   String
+  productId String?
+  product   Product? @relation(fields: [productId], references: [id], onDelete: Cascade)
+  serviceId String?
+  service   Service? @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  quantity  Int      @default(1)
+  price     Float
+  order     Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@map("order_items")
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+model PageView {
+  id        String   @id @default(cuid())
+  page      String
+  ipAddress String?
+  userAgent String?
+  referrer  String?
+  createdAt DateTime @default(now())
+
+  @@index([page])
+  @@index([createdAt])
+  @@map("page_views")
+}
+
+model ClickEvent {
+  id        String   @id @default(cuid())
+  element   String
+  page      String
+  metadata  Json?
+  createdAt DateTime @default(now())
+
+  @@index([element])
+  @@index([createdAt])
+  @@map("click_events")
+}
+
+model WebsiteSection {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  content   Json
+  isActive  Boolean  @default(true)
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("website_sections")
+}

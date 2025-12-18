@@ -1,3 +1,5 @@
+// components/trust/TrustIndicators.tsx
+
 import { Building2, Star, Car, Clock, CheckCircle2, Users, Shield, Award, ThumbsUp } from 'lucide-react'
 
 export function TrustIndicators() {

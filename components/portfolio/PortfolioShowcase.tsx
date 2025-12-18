@@ -1,3 +1,5 @@
+// components/portfolio/PortfolioShowcase.tsx
+
 import { ChevronRight, ArrowRight, Star, Clock } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'

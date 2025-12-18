@@ -1,3 +1,5 @@
+// components/hero/HeroCarousel.tsx
+
 'use client'
 
 import {

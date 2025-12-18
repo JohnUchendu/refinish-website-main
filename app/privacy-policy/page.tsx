@@ -1,4 +1,4 @@
-//privacy policy
+// app/privacy-policy/page.tsx
 
 import Link from 'next/link'
 

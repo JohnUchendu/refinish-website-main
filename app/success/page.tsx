@@ -1,3 +1,5 @@
+// app/success/page.tsx
+
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 

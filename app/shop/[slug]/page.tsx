@@ -1,3 +1,6 @@
+// app/shop/[slug]/page.tsx
+
+
 import { notFound } from 'next/navigation'
 import { mockProducts } from '@/lib/mock-data'
 import { Button } from '@/components/ui/button'

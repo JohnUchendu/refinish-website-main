@@ -1,3 +1,5 @@
+// lib/mock-data.ts
+
 import { Product, Service } from '@/types'
 
 export const mockProducts: Product[] = [

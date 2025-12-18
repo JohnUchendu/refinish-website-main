@@ -1,3 +1,5 @@
+// app/api/checkout/route.ts
+
 import { NextResponse } from 'next/server'
 import { initializeTransaction } from '@/lib/paystack'
 

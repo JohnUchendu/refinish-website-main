@@ -1,3 +1,5 @@
+// app/(marketing)/services/[id]/page.tsx
+
 import { notFound } from 'next/navigation'
 import { mockServices } from '@/lib/mock-data'
 import { UrgencyBadge } from '@/components/urgency/UrgencyBadge'

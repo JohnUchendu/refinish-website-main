@@ -1,3 +1,5 @@
+// components/urgency/UrgencyBadge.tsx
+
 export function UrgencyBadge({ type = 'discount' }: { type?: 'discount' | 'limited' | 'popular' }) {
   const config = {
     discount: {

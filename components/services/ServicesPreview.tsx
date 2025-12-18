@@ -1,3 +1,5 @@
+// components/services/ServicesPreview.tsx
+
 import { CheckCircle2, Clock, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'

@@ -1,3 +1,5 @@
+// app/(marketing)/layout.tsx
+
 export default function MarketingLayout({
   children,
 }: {
